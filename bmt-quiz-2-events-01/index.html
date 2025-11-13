@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechCon 2025 Event Schedule</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>TechCon 2025</h1>
+        <p class="subtitle">November 20-22, 2025 • San Francisco, CA</p>
+        <div class="header-controls">
+          <div class="theme-toggle">
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+              <span class="theme-icon">🌙</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="filters-section">
+          <h2>Event Filters</h2>
+          <div class="filter-buttons" id="filter-buttons">
+            <button class="filter-btn active" data-filter="all">
+              All Events
+            </button>
+            <button class="filter-btn" data-filter="Talk">Talks</button>
+            <button class="filter-btn" data-filter="Workshop">Workshops</button>
+            <button class="filter-btn" data-filter="Panel">Panels</button>
+            <button class="filter-btn" data-filter="Keynote">Keynotes</button>
+            <button class="filter-btn" data-filter="Social">
+              Social Events
+            </button>
+          </div>
+        </section>
+
+        <section id="event-container">
+          <!-- Event cards will be dynamically generated here -->
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 TechCon Conference. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

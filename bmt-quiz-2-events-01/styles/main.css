@@ -1,0 +1,291 @@
+/* CSS Variables for theming - Level 3 & 4 */
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --text-color: #f9fafb;
+  --text-light: #d1d5db;
+  --bg-color: #111827;
+  --card-bg: #1f2937;
+  --border-color: #374151;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Base styles - Level 1: Polished UI */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: var(--transition);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem 0;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.theme-toggle button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1.2rem;
+}
+
+.theme-toggle button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Main content */
+main {
+  padding: 2rem 0;
+}
+
+/* Filter section - Level 2: Event Filter */
+.filters-section {
+  margin-bottom: 2rem;
+}
+
+.filters-section h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Event container */
+#event-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Event cards - Level 1: Polished UI */
+.event-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
+}
+
+.event-content {
+  padding: 1.5rem;
+}
+
+.event-type {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.event-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.event-date {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.event-description {
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.event-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* No events message */
+.no-events {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
+}
+
+/* Footer */
+footer {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-light);
+  margin-top: 3rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #event-container {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .event-actions {
+    flex-direction: column;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #event-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
